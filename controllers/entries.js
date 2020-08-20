@@ -6,12 +6,12 @@ const Entry = require('../models/entries.js');
 // Index
 router.get('/', (req, res) => {
     res.render('Index');
-    // Entry.find({}, (error, allEntries) => {
-    //     res.render('entries/Index', {
-    //         entries: allEntries
-    //     })
-    // });
 });
+
+//New
+router.get('/new', (req, res) => {
+    res.render('New');
+})
 
 // export router
 module.exports = router;

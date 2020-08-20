@@ -9,6 +9,9 @@ class Index extends React.Component {
                 <form action="/entries" method="POST">
                     Date:{/*Calendar for date picking*/}<br/>
                     Entry for the Day: <input type="text" name="dayEntry" /><br/>
+                    Img source: <input name ="gameImgSrc"  /><br />
+                    Game Name: <input name="gameName" /><br />
+                    Game Entry: <input name="gameEntry" /><br />
                     <input type="submit" value="Submit New Game" />
                 </form>
             </Layout>

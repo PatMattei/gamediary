@@ -14,9 +14,13 @@ class Index extends React.Component {
                                 <a href={`/entries/${entry._id}`}>
                                     <p>{entry.dayEntry}</p>
                                 </a>
+                                <h2>Games played:</h2>
                                 {entry.games.map((game) => {
                                     return(
-                                        <h3>{game.gameName}</h3>
+                                        <div>
+                                            <h3 key={`${entry._id}-${game.gameName}`}>{game.gameName}</h3>
+                                            <img src={game.gameImgSrc} />
+                                        </div>
                                     )
                                 })}
                                 <hr></hr>

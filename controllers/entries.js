@@ -23,6 +23,9 @@ router.delete('/:id', (req, res) => {
 //Create
 
 //Edit
+router.get('/:id', (req, res) => {
+    res.render('Show');
+})
 
 //Shows
 

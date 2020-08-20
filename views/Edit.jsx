@@ -11,9 +11,9 @@ class Edit extends React.Component {
                     {games.map((game) => {
                         return(
                             <div key={_id}>
-                                Img source: <input name ="gameImgSrc" value={game.gameImgSrc} />
-                                Game Name: <input name="gameName" value={game.gameName} /><br />
-                                Game Entry: <input name="gameEntry" value={game.gameEntry} /><br />
+                                Img source: <input name ="gameImgSrc" value={game.gameImgSrc} required/>
+                                Game Name: <input name="gameName" value={game.gameName} required/><br />
+                                Game Entry: <input name="gameEntry" value={game.gameEntry} required/><br />
                             </div>
                         )
                     })}

@@ -27,9 +27,28 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
     //req.body.readyToEat = req.body.readyToEat === "on" ? true : false;
 
+    //iterate through each gameName
+    const gamesData = req.body.gameName.map((game, index) => {
+        //push game name into object
+        return {
+            gameName: game, 
+            gameImgSrc: req.body.gameImgSrc[index],
+            gameEntry: req.body.gameEntry[index]
+        }
+    })
+
+    delete req.body.gameName;
+    delete req.body.gameImgSrc;
+    delete req.body.gameEntry;
+
+
     // Update the fruit document using our model
     Entry.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
-        res.redirect('/entries');
+        //hardcode the entry date for now:
+        req.body.entryDate = '2020-08-20T15:17:27.282+00:00',
+        req.body.games = gamesData;
+        console.log('FULL:', req.body)
+        res.redirect(`/entries/${req.params.id}`);
     });
 });
 

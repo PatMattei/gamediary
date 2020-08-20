@@ -1,5 +1,6 @@
-module.exports = {
-    entryDate: 2020-08-18T15:17:27.282+00:00,
+module.exports = [{
+    _id: 123,
+    entryDate: '2020-08-18T15:17:27.282+00:00',
     dayEntry: "Day 1- Entry for the day",
     games: [
         {
@@ -12,4 +13,4 @@ module.exports = {
             gameEntry: "Played online for three hours straight!"
         }, 
     ]
-}
+}]

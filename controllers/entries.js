@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const Entry = require('../models/entries.js');
+//const Entry = require('../models/entries.js');
+const Entry = require('../models/seed.js');
 
 // add routes
 // Index
 router.get('/', (req, res) => {
-    res.render('Index');
+    res.render('Index', {
+        entry: Entry
+    });
 });
 
 //New

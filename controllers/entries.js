@@ -29,7 +29,11 @@ router.delete('/:id', (req, res) => {
 
 //Edit
 router.get('/:id', (req, res) => {
-    res.render('Show');
+    Entry.findById(req.params.id, (error, foundEntry) => {
+        res.render('Show', {
+            entry: foundEntry
+        })
+    })
 })
 
 //Shows

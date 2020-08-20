@@ -1,8 +1,13 @@
 const React = require('react');
+const Layout = require('./components/Layout');
 
 class Index extends React.Component {
     render() {
-        return<h1>Index Page</h1>
+        return (
+            <Layout>
+                <h1>Index</h1>
+            </Layout>
+        )
     }
 }
 

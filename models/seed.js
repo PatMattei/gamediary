@@ -3,7 +3,7 @@ module.exports = {
     dayEntry: "Day 1- Entry for the day",
     games: [
         {
-            gameName: "The Legend of Zelda",
+            gameName: "The Legend of Zelda: Breath of The Wild",
             gameImgSrc: "https://giantbomb1.cbsistatic.com/uploads/scale_small/0/3699/2920687-the%20legend%20of%20zelda%20-%20breath%20of%20the%20wild%20v7.jpg",
             gameEntry: "I fianlly beat the game!"
         }, {

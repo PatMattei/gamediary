@@ -13,5 +13,19 @@ router.get('/new', (req, res) => {
     res.render('New');
 })
 
+//Delete
+router.delete('/:id', (req, res) => {
+    res.redirect('Index');
+})
+
+//Update
+
+//Create
+
+//Edit
+
+//Shows
+
+
 // export router
 module.exports = router;

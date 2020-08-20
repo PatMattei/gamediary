@@ -21,7 +21,7 @@ mongoose.connect(mongoURI, {
 });
 
 //Controller
-const entriesController = require('./controllers/fruits.js');
+const entriesController = require('./controllers/entries.js');
 app.use('/entries', entriesController);
 
 // listen

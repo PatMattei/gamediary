@@ -3,17 +3,22 @@ const Layout = require('./components/Layout');
 
 class Index extends React.Component {
     render() {
-        const entry = this.props.entry
+        const entries = this.props.entries
         return (
             <Layout>
-                <ul class="index-list">
-                    {entry.map((entry) => {
+                <ul className="index-list">
+                    {entries.map((entry) => {
                         return(
-                            <li class="diary-entry">
+                            <li className="diary-entry" key={entry._id}>
                                 <a href={`/diary-entry/${entry._id}`}>
-                                    <img src={entry.img} /> 
-                                    <h2>{entry.name}</h2>
-                                </a>                                
+                                    <p>{entry.dayEntry}</p>
+                                </a>
+                                {entry.games.map((game) => {
+                                    return(
+                                        <h3>{game.gameName}</h3>
+                                    )
+                                })}
+                                <hr></hr>
                             </li>
                         );
                     })}

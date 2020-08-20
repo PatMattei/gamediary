@@ -13,7 +13,7 @@ class Layout extends React.Component {
                         <a href="/entries">Home</a>
                         <a href="/entries/new">Create</a>
                     </nav>
-                    <div class="container">
+                    <div className="container">
                         {this.props.children}
                     </div>
                 </body>

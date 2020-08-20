@@ -28,6 +28,8 @@ router.delete('/:id', (req, res) => {
 //Create
 
 //Edit
+
+//Shows
 router.get('/:id', (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('Show', {
@@ -35,9 +37,6 @@ router.get('/:id', (req, res) => {
         })
     })
 })
-
-//Shows
-
 
 // export router
 module.exports = router;

@@ -16,6 +16,7 @@ class Show extends React.Component {
                             <img src={game.gameImgSrc} />
                             <h3>{game.gameName}</h3>
                             <p>{game.gameEntry}</p>
+                            <hr />
                         </div>
                     )
                 })}

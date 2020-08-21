@@ -13,8 +13,8 @@ class Index extends React.Component {
                             <li className="diary-entry" key={entry._id}>
                                 <a href={`/entries/${entry._id}`}>
                                     <p>{entry.dayEntry}</p>
+                                    <h2>Games played:</h2>
                                 </a>
-                                <h2>Games played:</h2>
                                 {entry.games.map((game) => {
                                     return(
                                         <div>

@@ -20,8 +20,11 @@ router.get('/new', (req, res) => {
 
 //Delete
 router.delete('/:id', (req, res) => {
-    res.redirect('Index');
-})
+    // Delete document from collection
+    Entry.findByIdAndRemove(req.params.id, (err, entry) => {
+        res.redirect('/entries');
+    });
+});
 
 //Update
 router.put('/:id', (req, res) => {

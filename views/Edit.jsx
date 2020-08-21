@@ -8,18 +8,19 @@ class Edit extends React.Component {
         return (
             <Layout>
                 <h1>Edit Page</h1>
-                <form action={`/entries/${_id}?_method=PUT`} method="POST">
+                <form action={`/entries/${_id}?_method=PUT`} method="POST" className="entry-info-form">
                     <textarea name="dayEntry" value={dayEntry} />
                     {games.map((game) => {
                         return(
-                            <div key={_id}>
+                            <div key={`${_id}-game-${game.gameName}`} className="game-entry">
                                 Img source: <input name ="gameImgSrc" defaultValue={game.gameImgSrc} required/>
                                 Game Name: <input name="gameName" defaultValue={game.gameName} required/><br />
                                 Game Entry: <input name="gameEntry" defaultValue={game.gameEntry} required/><br />
+                                <button className="remove-game" action="" method="">Remove Game</button>
                             </div>
                         )
                     })}
-                    <input type="submit" name="" defaultValue="Submit Changes"/>
+                    <input type="submit" name="" className="submit-entry" defaultValue="Submit Changes"/>
                 </form>
                 <button className="add-game">Add Another Game</button>
                 <hr />

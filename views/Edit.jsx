@@ -11,13 +11,13 @@ class Edit extends React.Component {
                     {games.map((game) => {
                         return(
                             <div key={_id}>
-                                Img source: <input name ="gameImgSrc" value={game.gameImgSrc} required/>
-                                Game Name: <input name="gameName" value={game.gameName} required/><br />
-                                Game Entry: <input name="gameEntry" value={game.gameEntry} required/><br />
+                                Img source: <input name ="gameImgSrc" defaultValue={game.gameImgSrc} required/>
+                                Game Name: <input name="gameName" defaultValue={game.gameName} required/><br />
+                                Game Entry: <input name="gameEntry" defaultValue={game.gameEntry} required/><br />
                             </div>
                         )
                     })}
-                    <input type="submit" name="" value="Submit Changes"/>
+                    <input type="submit" name="" defaultValue="Submit Changes"/>
                 </form>
             </div>
         )

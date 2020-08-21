@@ -25,29 +25,41 @@ router.delete('/:id', (req, res) => {
 
 //Update
 router.put('/:id', (req, res) => {
-    //req.body.readyToEat = req.body.readyToEat === "on" ? true : false;
+    let gamesData = "";
 
     //iterate through each gameName
-    const gamesData = req.body.gameName.map((game, index) => {
+    console.log("----------TYPE: ---------",typeof req.body.gameName);
+    if (typeof req.body.gameName === "object") {
+        gamesData = req.body.gameName.map((game, index) => {
         //push game name into object
-        return {
-            gameName: game, 
-            gameImgSrc: req.body.gameImgSrc[index],
-            gameEntry: req.body.gameEntry[index]
-        }
-    })
+            return {
+                gameName: req.body.gameName[index],
+                gameImgSrc: req.body.gameImgSrc[index],
+                gameEntry: req.body.gameEntry[index]
+            }
+        });
+    } else {
+        gamesData = [{
+            gameName: req.body.gameName, 
+            gameImgSrc: req.body.gameImgSrc,
+            gameEntry: req.body.gameEntry
+        }];
+    }
+    console.log(gamesData)
+    req.body.games = gamesData;
+    console.log(req.body);
+
 
     delete req.body.gameName;
     delete req.body.gameImgSrc;
     delete req.body.gameEntry;
 
-
     // Update the fruit document using our model
     Entry.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
+
         //hardcode the entry date for now:
         req.body.entryDate = '2020-08-20T15:17:27.282+00:00',
-        req.body.games = gamesData;
-        console.log('FULL:', req.body)
+        
         res.redirect(`/entries/${req.params.id}`);
     });
 });

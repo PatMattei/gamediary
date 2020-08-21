@@ -20,7 +20,6 @@ router.get('/new', (req, res) => {
 
 //Delete
 router.delete('/:id', (req, res) => {
-    // Delete document from collection
     Entry.findByIdAndRemove(req.params.id, (err, entry) => {
         res.redirect('/entries');
     });
@@ -30,9 +29,8 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
     let gamesData = "";
 
-    //iterate through each gameName
-    console.log("----------TYPE: ---------",typeof req.body.gameName);
     if (typeof req.body.gameName === "object") {
+        //iterate through each gameName
         gamesData = req.body.gameName.map((game, index) => {
         //push game name into object
             return {
@@ -48,21 +46,17 @@ router.put('/:id', (req, res) => {
             gameEntry: req.body.gameEntry
         }];
     }
-    console.log(gamesData)
     req.body.games = gamesData;
-    console.log(req.body);
-
-
+    
+    //Delete the original entries passed since we have the array of them in gamesData
     delete req.body.gameName;
     delete req.body.gameImgSrc;
     delete req.body.gameEntry;
 
-    // Update the fruit document using our model
     Entry.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
 
         //hardcode the entry date for now:
         req.body.entryDate = '2020-08-20T15:17:27.282+00:00',
-        
         res.redirect(`/entries/${req.params.id}`);
     });
 });
@@ -78,9 +72,6 @@ router.post('/', (req, res) => {
             gameEntry: req.body.gameEntry
         }]
     }
-
-    console.log (req.body);
-        
     Entry.create(req.body, (error, createdEntry) => {
         res.redirect('/entries');
     });

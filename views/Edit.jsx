@@ -4,6 +4,7 @@ const Layout = require('./components/Layout');
 class Edit extends React.Component {
     render() {
         const {_id, dayEntry, games} = this.props.entry;
+
         return (
             <Layout>
                 <h1>Edit Page</h1>
@@ -21,8 +22,9 @@ class Edit extends React.Component {
                     <input type="submit" name="" defaultValue="Submit Changes"/>
                 </form>
                 <button className="add-game">Add Another Game</button>
+                <hr />
                 <form action={`/entries/${_id}?_method=DELETE`} method="POST">
-                    <input type="submit" value="Delete this Entry"/>
+                    <input type="submit" defaultValue="Delete this Entry"/>
                 </form>
             </Layout>
         )

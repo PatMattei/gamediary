@@ -24,6 +24,11 @@ mongoose.connect(mongoURI, {
 const entriesController = require('./controllers/entries.js');
 app.use('/entries', entriesController);
 
+// Default route:
+app.get("/", (req, res) => {
+    res.redirect("/entries");
+});
+
 // listen
 app.listen(PORT, () => {
     console.log('listening on: ' + PORT);

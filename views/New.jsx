@@ -15,7 +15,7 @@ class Index extends React.Component {
                     Game Entry: <input type="text" name="gameEntry" required/><br />
                     <input type="submit" value="Submit New Game" />
                 </form>
-                <button className="add-game">Add Another Game</button>
+                <button className="remove-game">Remove Game</button>
             </Layout>
         )
     }

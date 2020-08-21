@@ -16,10 +16,11 @@ class Edit extends React.Component {
                                 Img source: <input name ="gameImgSrc" defaultValue={game.gameImgSrc} required/>
                                 Game Name: <input name="gameName" defaultValue={game.gameName} required/><br />
                                 Game Entry: <input name="gameEntry" defaultValue={game.gameEntry} required/><br />
-                                <button className="remove-game" action="" method="">Remove Game</button>
+                                <button className="remove-game" type="button">Remove Game</button>
                             </div>
                         )
                     })}
+                    <hr />
                     <input type="submit" name="" className="submit-entry" defaultValue="Submit Changes"/>
                 </form>
                 <button className="add-game">Add Another Game</button>

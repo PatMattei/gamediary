@@ -1,11 +1,17 @@
-$(".add-game").click(() => {
-	$(
-		'<div key={`${_id}-game-${game.gameName}`}>Img source: <input name ="gameImgSrc" required/>Game Name: <input name="gameName" required/><br />Game Entry: <input name="gameEntry" required/><br /><button className="remove-game" action="" method="">Remove Game</button></div>'
-	).insertBefore(".submit-entry");
-});
+$(document).ready(function(){
+    $(".add-game").click(() => {
+        event.preventDefault();
+        const div = $('<div class="game-entry">Img source: <input name ="gameImgSrc" required/>Game Name: <input name="gameName" required/><br />Game Entry: <input name="gameEntry" required/><br /><button class="remove-game" type="button">Remove Game</button></div>');
+        div.insertBefore(".submit-entry").on('click', '.remove-game', (event) => {
+            event.preventDefault();
+            $(event.target).closest(".game-entry").remove();
+        });
+    });
 
+    $(".remove-game").on('click', (event) => {
+        event.preventDefault();
+        $(event.target).closest(".game-entry").remove();
+    });
 
-$(".remove-game").click((event) => {
-    event.preventDefault();
-    $(event.target).closest(".game-entry").remove();
+ 
 });

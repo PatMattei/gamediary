@@ -63,14 +63,35 @@ router.put('/:id', (req, res) => {
 
 //Create
 router.post('/', (req, res) => {
+    let gamesData = "";
+
+    if (typeof req.body.gameName === "object") {
+        //iterate through each gameName
+        gamesData = req.body.gameName.map((game, index) => {
+        //push game name into object
+            return {
+                gameName: req.body.gameName[index],
+                gameImgSrc: req.body.gameImgSrc[index],
+                gameEntry: req.body.gameEntry[index]
+            }
+        });
+    } else {
+        gamesData = [{
+            gameName: req.body.gameName, 
+            gameImgSrc: req.body.gameImgSrc,
+            gameEntry: req.body.gameEntry
+        }];
+    }
+    
+    //Delete the original entries passed since we have the array of them in gamesData
+    delete req.body.gameName;
+    delete req.body.gameImgSrc;
+    delete req.body.gameEntry;
+
     req.body = {
         entryDate: '2020-08-20T15:17:27.282+00:00',
         dayEntry: req.body.dayEntry,
-        games: [{
-            gameName: req.body.gameName,
-            gameImgSrc: req.body.gameImgSrc,
-            gameEntry: req.body.gameEntry
-        }]
+        games: gamesData
     }
     Entry.create(req.body, (error, createdEntry) => {
         res.redirect('/entries');

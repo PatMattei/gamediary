@@ -23,7 +23,7 @@ class Edit extends React.Component {
                     <hr />
                     <input type="submit" name="" className="submit-entry" defaultValue="Submit Changes"/>
                 </form>
-                <button className="add-game">Add Another Game</button>
+                <button className="add-game" type="button">Add Another Game</button>
                 <hr />
                 <form action={`/entries/${_id}?_method=DELETE`} method="POST">
                     <input type="submit" defaultValue="Delete this Entry"/>

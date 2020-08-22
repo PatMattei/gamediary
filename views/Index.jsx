@@ -12,7 +12,7 @@ class Index extends React.Component {
                         return(
                             <li className="diary-entry" key={entry._id}>
                                 <a href={`/entries/${entry._id}`}>
-                                    <p>{entry.dayEntry}</p>
+                                    <p>Entry for <span className="entry-date">{entry.entryDate.toString()}</span></p>
                                     <h2>Games played:</h2>
                                 </a>
                                 {entry.games.map((game) => {

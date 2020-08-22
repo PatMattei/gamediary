@@ -3,19 +3,20 @@ const Layout = require('./components/Layout');
 
 class Edit extends React.Component {
     render() {
-        const {_id, dayEntry, games} = this.props.entry;
+        const {_id, dayEntry, games, entryDate} = this.props.entry;
 
         return (
             <Layout>
                 <h1>Edit Page</h1>
                 <form action={`/entries/${_id}?_method=PUT`} method="POST" className="entry-info-form">
-                    <textarea name="dayEntry" value={dayEntry} />
+                    Edit Date: <input id="datepicker" name="entryDate" defaultValue={entryDate} required />
+                    Edit Day's Entry: <textarea name="dayEntry" defaultValue={dayEntry} />
                     {games.map((game) => {
                         return(
                             <div key={`${_id}-game-${game.gameName}`} className="game-entry">
-                                Img source: <input name ="gameImgSrc" defaultValue={game.gameImgSrc} required/>
-                                Game Name: <input name="gameName" defaultValue={game.gameName} required/><br />
-                                Game Entry: <input name="gameEntry" defaultValue={game.gameEntry} required/><br />
+                                Edit Img source: <input name ="gameImgSrc" defaultValue={game.gameImgSrc} required/>
+                                Edit Game Name: <input name="gameName" defaultValue={game.gameName} required/><br />
+                                Edit Game Entry: <input name="gameEntry" defaultValue={game.gameEntry} required/><br />
                                 <button className="remove-game" type="button">Remove Game</button>
                             </div>
                         )

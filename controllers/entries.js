@@ -54,9 +54,6 @@ router.put('/:id', (req, res) => {
     delete req.body.gameEntry;
 
     Entry.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
-
-        //hardcode the entry date for now:
-        req.body.entryDate = '2020-08-20T15:17:27.282+00:00',
         res.redirect(`/entries/${req.params.id}`);
     });
 });
@@ -89,7 +86,7 @@ router.post('/', (req, res) => {
     delete req.body.gameEntry;
 
     req.body = {
-        entryDate: '2020-08-20T15:17:27.282+00:00',
+        entryDate: req.body.entryDate,
         dayEntry: req.body.dayEntry,
         games: gamesData
     }

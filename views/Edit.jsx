@@ -14,8 +14,8 @@ class Edit extends React.Component {
                             <a href={`/entries/${_id}`}><button type="button" className="edit-entry-btn btn btn-primary">Back To Entry</button></a>
                         </div>
                         <label for="entryDate">Edit Date:</label>
-                        <input id="datepicker" label="Edit Date:" name="entryDate" className='form-control col-8' defaultValue={entryDate} required /><br />
-                        <div className="col-8">
+                        <input id="datepicker" label="Edit Date:" name="entryDate" className='form-control' defaultValue={entryDate} required /><br />
+                        <div className="">
                             <label for="dayEntry">Edit Day's Entry:</label>
                             <textarea name="dayEntry" className="day-entry form-control" defaultValue={dayEntry} />
                         </div>
@@ -42,7 +42,7 @@ class Edit extends React.Component {
                 <button className="add-game btn btn-primary" type="button">Add Another Game</button>
                 <hr />
                 <form action={`/entries/${_id}?_method=DELETE`} method="POST">
-                    <input type="submit" class="btn btn-danger" defaultValue="Delete this Entry"/>
+                    <input type="submit" class="btn btn-danger" defaultValue="Delete This Day's Entry"/>
                 </form>
             </Layout>
         )

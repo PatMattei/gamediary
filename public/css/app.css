@@ -89,13 +89,18 @@ nav {
 .show-entry-top {
     margin-bottom: 20px;
 }
+
+.show-entry-game {
+    margin-bottom: 20px;
+}
+
 .show-entry-top .day-entry {
     height: 200px;
     border: black solid 1px;
     overflow: auto;
 }
 
-.show-entry-top .game-entry-text {
+.show-entry-game-list .game-entry-text {
     height: 200px;
     overflow: auto;
     border: black solid 1px;

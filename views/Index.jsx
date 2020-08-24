@@ -11,7 +11,9 @@ class Index extends React.Component {
                     {entries.map((entry) => {
                         return(
                             <li className="index-diary-entry row" key={entry._id}>
-                                <div className="entry-date col-12">{entry.entryDate.toString()}</div>
+                                <div className="entry-date col-12">
+                                    <a href={`/entries/${entry._id}`}>{entry.entryDate.toString()}</a>
+                                </div>
                                 <div className="index-entry-main row">
                                     <div className="entry-game-img-thumbnail-list d-flex flex-wrap col-5">
                                         

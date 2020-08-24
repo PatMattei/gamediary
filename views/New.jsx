@@ -7,16 +7,21 @@ class Index extends React.Component {
             <Layout>
                 <h1>New Entry</h1>
                 <form action="/entries" method="POST" className="entry-info-form">
-                    Date: <input id="datepicker" name="entryDate" required /><br/>
-                    Entry for the Day: <textarea name="dayEntry" /><br/>
+                    <label for="datepicker">Date: </label>
+                    <input id="datepicker" name="entryDate" className="form-control" required /><br/>
+                    <label for="dayEntry">Entry for the Day: </label>
+                    <textarea name="dayEntry" className="form-control" /><br/>
                     <div className="game-entry">
-                        Img source: <input type="text" name="gameImgSrc" required/><br />
-                        Game Name: <input type="text" name="gameName" required/><br />
-                        Game Entry: <input type="text" name="gameEntry" required/><br />
+                        <label for="gameImgSrc">Img source: </label>
+                        <input type="text" name="gameImgSrc" className="form-control" required/><br />
+                        <label for="gameName">Game Name:</label>
+                        <input type="text" name="gameName" className="form-control" required/><br />
+                        <label for="gameEntry">Game Entry:</label>
+                        <input type="text" name="gameEntry" className="form-control" required/><br />
                     </div>
-                    <input type="submit" name="" className="submit-entry" defaultValue="Submit Entry"/>
+                    <input type="submit" name="" className="submit-entry btn btn-success" defaultValue="Submit Entry"/>
                 </form>
-                <button className="add-game" type="button">Add Another Game</button>
+                <button className="add-game btn btn-primary" type="button">Add Another Game</button>
             </Layout>
         )
     }

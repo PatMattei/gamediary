@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.diary-entry {
+    border: solid 1px black;
+    height: 300px;
+    margin-bottom: 20px
+}
+
+.day-diary {
+    border: gray solid 1px;
+    overflow: auto;
+}
+.entry-game-img-thumbnail-list {
+    padding: 1% 0;
+    overflow: auto;
+}
+
+.game-img-thumbnail-container {
+    overflow: hidden;
+}
+
+.game-img-thumbnail {
+    width: 100%;
+    height: auto;
+}
+
+.date-button-container {
+    padding: 0 0 1%;
+}
+
+.entry-date {
+    background-color: #EEEEEE;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5%;
+}
+
+.view-full-entry {
+    margin: auto;
+    position: relative;
+    display: block;
+}

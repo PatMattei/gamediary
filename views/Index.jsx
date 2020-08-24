@@ -23,7 +23,7 @@ class Index extends React.Component {
                                 <div className="day-diary col-2">{entry.dayEntry}</div>
                                 <div className="date-button-container col-2">
                                     <div className="entry-date">{entry.entryDate.toString()}</div>
-                                    <a href={`/entries/${entry._id}`}><button type="button" className="view-full-entry btn btn-primary">View Full Entry</button></a>
+                                    <a href={`/entries/${entry._id}`}><button type="button" className="view-full-entry-btn btn btn-primary">View Full Entry</button></a>
                                 </div>
                             </li>
                         );

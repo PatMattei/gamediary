@@ -13,19 +13,20 @@ class Show extends React.Component {
                         <h2 className='entry-date col-12' datetime={dayEntry}>{entryDate.toString()}</h2>
                         <div className="day-entry col-8">{dayEntry}</div>
                         <div className="col-4">
-                            <a href={`${_id}/edit`} className="c"><button type="button" className="edit-entry-btn btn btn-primary">Edit Today's Entry</button></a>
+                            <a href={`${_id}/edit`}><button type="button" className="edit-entry-btn btn btn-primary">Edit Today's Entry</button></a>
                         </div>
                     </div>
-                    {games.map((game) => {
-                        return(
-                            <div key={`${_id}-${game.gameName}`}>
-                                <img src={game.gameImgSrc} />
-                                <h3>{game.gameName}</h3>
-                                <p>{game.gameEntry}</p>
-                                <hr />
-                            </div>
-                        )
-                    })}
+                    <div className="show-entry-game-list">
+                        {games.map((game) => {
+                            return(
+                                <div key={`${_id}-${game.gameName}`} className="show-entry-game row">
+                                    <img src={game.gameImgSrc} className="col-2"/>
+                                    <div className="game-entry-text col-9">{game.gameEntry}</div>
+                                    <hr />
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </Layout>
         )

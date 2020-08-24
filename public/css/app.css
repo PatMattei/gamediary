@@ -4,24 +4,67 @@
     box-sizing: border-box;
 }
 
+.container-fluid {
+    padding: 0;
+}
 
-.diary-entry {
+nav {
+    margin-bottom: 5%;
+    padding: 1%;
+}
+
+.index-list {
+    font-size: 20px
+}
+.index-diary-entry {
     border: solid 1px black;
     height: 170px;
-    margin-bottom: 20px
+    margin: 0 0 20px;
+    position: relative;
+    display: block;
 }
+
+.index-entry-main {
+    margin: 0;
+    width: 100%;
+    height: 60%;
+}
+.entry-date {
+    border-radius: 0 0 0 10px;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+.index-diary-entry .entry-date {
+    font-size: 12px;
+}
+
+.show-entry-container .entry-date {}
 
 .day-diary {
     border: gray solid 1px;
     overflow: auto;
 }
+
+.index-diary-entry .day-diary {
+    font-size: .5em;
+    height: 100%;
+    padding: 0 5px;
+}
+
+.view-full-entry-btn {
+    font-size: .4em
+}
 .entry-game-img-thumbnail-list {
     padding: 1% 0;
     overflow: auto;
+    height: 100%;
 }
 
 .game-img-thumbnail-container {
     overflow: hidden;
+    padding: 0 2%;
+    margin-bottom: 4px;
 }
 
 .game-img-thumbnail {
@@ -38,9 +81,6 @@
     font-weight: bold;
     color: #000;
 }
-.index-list .entry-date {
-    margin-bottom: 5%;
-}
 
 .view-full-entry-btn,
 .edit-entry-btn {
@@ -51,6 +91,7 @@
 
 .show-entry-top {
     overflow: auto;
+    margin: 0 0 20px;
 }
 .show-entry-top .day-entry {
     height: 200px;

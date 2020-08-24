@@ -22,7 +22,7 @@ class Layout extends React.Component {
 
                 </head>
                 <body>
-                    <div className="container-fluid">
+                    <div className="container">
                         <nav className="d-flex justify-content-between">
                             <h2><a className="display-5" href="/entries">GameDiary</a></h2>
                             <a href="/entries/new" className="btn btn-primary">New Entry</a>

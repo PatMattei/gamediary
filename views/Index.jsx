@@ -15,18 +15,18 @@ class Index extends React.Component {
                                     <a href={`/entries/${entry._id}`}>{entry.entryDate.toString()}</a>
                                 </div>
                                 <div className="index-entry-main row">
-                                    <div className="entry-game-img-thumbnail-list d-flex flex-wrap col-5">
+                                    <div className="entry-game-img-thumbnail-list d-flex flex-wrap col-5 col-lg-8">
                                         
                                         {entry.games.map((game) => {
                                             return(
-                                                <div className="game-img-thumbnail-container col-4">
+                                                <div className="game-img-thumbnail-container col-4 col-lg-3">
                                                     <img src={game.gameImgSrc} className="game-img-thumbnail" />
                                                 </div>
                                             )
                                         })}
                                     </div>
-                                    <div className="day-diary col-4">{entry.dayEntry}</div>
-                                    <div className="full-entry-btn-container col-3">
+                                    <div className="day-diary col-4 col-lg-2">{entry.dayEntry}</div>
+                                    <div className="full-entry-btn-container col-3 col-lg-2">
                                         <a href={`/entries/${entry._id}`}><button type="button" className="view-full-entry-btn btn btn-primary">View Full Entry</button></a>
                                     </div>
                                 </div>

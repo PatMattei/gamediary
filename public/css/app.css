@@ -105,3 +105,21 @@ nav {
     overflow: auto;
     border: black solid 1px;
 }
+
+
+@media (min-width: 768px) {
+    .index-diary-entry .day-diary,
+    .view-full-entry-btn {
+        font-size: .7em;
+    }
+}
+@media (min-width: 992px) {
+    .index-diary-entry {
+        height: 300px;
+    }
+
+    .index-entry-main {
+        height: 85%
+    }
+
+}

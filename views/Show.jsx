@@ -8,7 +8,7 @@ class Show extends React.Component {
         
         return (
             <Layout>
-                <div className="show-entry-container">
+                <div className="show-entry-container w-100">
                     <div className="show-entry-top row">
                         <h2 className='entry-date col-12' datetime={dayEntry}>{entryDate.toString()}</h2>
                         <div className="day-entry col-8">{dayEntry}</div>
@@ -20,8 +20,10 @@ class Show extends React.Component {
                         {games.map((game) => {
                             return(
                                 <div key={`${_id}-${game.gameName}`} className="show-entry-game row">
-                                    <img src={game.gameImgSrc} className="col-2"/>
-                                    <div className="game-entry-text col-9">{game.gameEntry}</div>
+                                    <div className="game-img-thumbnail-container col-5">
+                                        <img src={game.gameImgSrc} alt={game.gameName} />
+                                    </div>
+                                    <div className="game-entry-text col-7">{game.gameEntry}</div>
                                     <hr />
                                 </div>
                             )

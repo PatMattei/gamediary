@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-.container-fluid {
-    padding: 0;
-}
 
 nav {
     margin-bottom: 5%;
@@ -19,9 +16,9 @@ nav {
 .index-diary-entry {
     border: solid 1px black;
     height: 170px;
-    margin: 0 0 20px;
     position: relative;
     display: block;
+    margin-bottom: 20px;
 }
 
 .index-entry-main {
@@ -67,7 +64,7 @@ nav {
     margin-bottom: 4px;
 }
 
-.game-img-thumbnail {
+.game-img-thumbnail-container img {
     width: 100%;
     height: auto;
 }
@@ -90,8 +87,7 @@ nav {
 }
 
 .show-entry-top {
-    overflow: auto;
-    margin: 0 0 20px;
+    margin-bottom: 20px;
 }
 .show-entry-top .day-entry {
     height: 200px;

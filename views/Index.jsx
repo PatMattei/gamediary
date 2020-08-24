@@ -7,10 +7,10 @@ class Index extends React.Component {
         
         return (
             <Layout>
-                <ul className="index-list">
+                <ul className="index-list w-100">
                     {entries.map((entry) => {
                         return(
-                            <li className="index-diary-entry row w-100" key={entry._id}>
+                            <li className="index-diary-entry row" key={entry._id}>
                                 <div className="entry-date col-12">{entry.entryDate.toString()}</div>
                                 <div className="index-entry-main row">
                                     <div className="entry-game-img-thumbnail-list d-flex flex-wrap col-5">

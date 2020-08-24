@@ -8,19 +8,25 @@ class Show extends React.Component {
         
         return (
             <Layout>
-                <a href={`${_id}/edit`}>Edit this Entry</a>
-                <h2 className='entry-date'>{entryDate.toString()}</h2>
-                <p>{dayEntry}</p>
-                {games.map((game) => {
-                    return(
-                        <div key={`${_id}-${game.gameName}`}>
-                            <img src={game.gameImgSrc} />
-                            <h3>{game.gameName}</h3>
-                            <p>{game.gameEntry}</p>
-                            <hr />
+                <div className="show-entry-container">
+                    <div className="show-entry-top row">
+                        <h2 className='entry-date col-12' datetime={dayEntry}>{entryDate.toString()}</h2>
+                        <div className="day-entry col-8">{dayEntry}</div>
+                        <div className="col-4">
+                            <a href={`${_id}/edit`} className="c"><button type="button" className="edit-entry-btn btn btn-primary">Edit Today's Entry</button></a>
                         </div>
-                    )
-                })}
+                    </div>
+                    {games.map((game) => {
+                        return(
+                            <div key={`${_id}-${game.gameName}`}>
+                                <img src={game.gameImgSrc} />
+                                <h3>{game.gameName}</h3>
+                                <p>{game.gameEntry}</p>
+                                <hr />
+                            </div>
+                        )
+                    })}
+                </div>
             </Layout>
         )
     }

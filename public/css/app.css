@@ -35,11 +35,22 @@
     background-color: #EEEEEE;
     font-weight: bold;
     color: #000;
+}
+.index-list .entry-date {
     margin-bottom: 5%;
 }
 
-.view-full-entry {
+.view-full-entry-btn,
+.edit-entry-btn {
     margin: auto;
     position: relative;
     display: block;
+}
+
+.show-entry-top {
+    overflow: auto;
+}
+.show-entry-top .day-entry {
+    height: 200px;
+    border: black solid 1px;
 }

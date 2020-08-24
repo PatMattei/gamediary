@@ -95,7 +95,7 @@ nav {
     overflow: auto;
 }
 
-.game-entry-text {
+.show-entry-top .game-entry-text {
     height: 200px;
     overflow: auto;
     border: black solid 1px;

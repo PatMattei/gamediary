@@ -9,15 +9,15 @@ class Edit extends React.Component {
             <Layout>
                 <h1>Edit Page</h1>
                 <form action={`/entries/${_id}?_method=PUT`} method="POST" className="entry-info-form form-group">
-                    <div className="edit-entry-top row">
-                    <label for="entryDate">Edit Date:</label>
-                    <input id="datepicker" label="Edit Date:" name="entryDate" className='entry-date form-control col-12' defaultValue={entryDate} required /><br />
+                    <div className="edit-entry-top">
+                        <div>
+                            <a href={`/entries/${_id}`}><button type="button" className="edit-entry-btn btn btn-primary">Back To Entry</button></a>
+                        </div>
+                        <label for="entryDate">Edit Date:</label>
+                        <input id="datepicker" label="Edit Date:" name="entryDate" className='form-control col-8' defaultValue={entryDate} required /><br />
                         <div className="col-8">
                             <label for="dayEntry">Edit Day's Entry:</label>
                             <textarea name="dayEntry" className="day-entry form-control" defaultValue={dayEntry} />
-                        </div>
-                        <div className="col-4">
-                            <a href={`/entries/${_id}`}><button type="button" className="edit-entry-btn btn btn-primary">Back To Entry</button></a>
                         </div>
                     </div>
                     
@@ -25,10 +25,13 @@ class Edit extends React.Component {
                         {games.map((game) => {
                             return(
                                 <div key={`${_id}-game-${game.gameName}`} className="game-entry">
-                                    Edit Img source: <input name="gameImgSrc" defaultValue={game.gameImgSrc} className="form-control" required/>
-                                    Edit Game Name: <input name="gameName" defaultValue={game.gameName} className="form-control" required/><br />
-                                    Edit Game Entry: <textarea name="gameEntry" className="game-entry-text form-control"  defaultValue={game.gameEntry} required/><br />
-                                    <button className="remove-game btn btn-danger" type="button">Remove Game</button>
+                                    <label for="gameImgSrc">Edit Img source:</label>
+                                    <input name="gameImgSrc" defaultValue={game.gameImgSrc} className="form-control" required/>
+                                    <label for="gameName">Edit Game Name:</label>
+                                    <input name="gameName" defaultValue={game.gameName} className="form-control" required/><br />
+                                    <label for="gameEntry">Edit Game Entry:</label>
+                                    <textarea name="gameEntry" className="game-entry-text form-control"  defaultValue={game.gameEntry} required/><br />
+                                    <button className="remove-game btn btn-outline-danger text-justify" type="button">Remove Game</button>
                                     <hr />
                                 </div>
                             )

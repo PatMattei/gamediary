@@ -24,13 +24,17 @@ router.get('/api/:query', function(req, res) {
     var qs = {
       params: {
         query: req.params.query,
-        api_key: GB_API_KEY
+        api_key: GB_API_KEY,
+        format: "json"
       }
     };
   
     axios.get('https://www.giantbomb.com/api/search/', qs)
       .then(function (response) {
         // handle success
+        res.render('components/ApiFoundGamesList', {
+            apiCall: response.data
+        })
         console.log(response.data);
       })
   });

@@ -36,7 +36,6 @@ class New extends React.Component {
                         {/*<label htmlFor="gameImgSrc">Img source:</label><input type="text" name="gameImgSrc" className="form-control" required/><br />*/}
                         <label htmlFor="gameName">Game Name:</label>
                         <input type="text" name="gameName" className="form-control" required/><br />
-                        <ApiFoundGamesList></ApiFoundGamesList>
                         <label htmlFor="gameEntry">Game Entry:</label>
                         <input type="text" name="gameEntry" className="form-control" required/><br />
                     </div>

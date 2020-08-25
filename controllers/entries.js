@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const axios = require("axios");
 const Entry = require('../models/entries.js');
+
+const GB_API_KEY = process.env.GB_API_KEY;
 
 // add routes
 // Index
@@ -16,6 +19,22 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
     res.render('New');
 });
+
+router.get('/api/:query', function(req, res) {
+    var qs = {
+      params: {
+        query: req.params.query,
+        api_key: GB_API_KEY
+      }
+    };
+  
+    axios.get('https://www.giantbomb.com/api/search/', qs)
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+      })
+  });
+  
 
 //Delete
 router.delete('/:id', (req, res) => {

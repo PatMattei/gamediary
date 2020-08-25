@@ -11,7 +11,7 @@ class New extends React.Component {
       render() {
         return <h1>my Component has Mounted, Check the browser 'console' </h1>;
       }
-    }
+
     render() {
         return(
             <Layout>

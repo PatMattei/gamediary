@@ -1,15 +1,11 @@
 require("dotenv").config();
 
 const express = require('express');
+
 const router = express.Router();
 const request = require('request');
 
 const GB_API_KEY = process.env.GB_API_KEY;
-
-
-fetch('https://api.github.com/users/hacktivist123/repos')
-  .then(response => response.json())
-  .then(data => console.log(data));
 
 
 //////////API TESTING//////////

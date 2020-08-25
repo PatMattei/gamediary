@@ -4,16 +4,6 @@ const ApiFoundGamesList = require('./components/ApiFoundGamesList');
 
 
 class New extends React.Component {
-    // componentDidMount() {
-    //     const apiUrl = 'https://api.github.com/users/hacktivist123/repos';
-    //     fetch(apiUrl)
-    //       .then((response) => response.json())
-    //       .then((data) => console.log('This is your data', data));
-    //   }
-    //   render() {
-    //     return <h1>my Component has Mounted, Check the browser 'console' </h1>;
-    //   }
-
     render() {
         return(
             <Layout>
@@ -27,18 +17,21 @@ class New extends React.Component {
                     {/*add img src to gameImgSrc field*/}
 
 
-                <form action="/entries" method="POST" className="entry-info-form">
+                <form action="/entries" method="POST">
                     <label htmlFor="datepicker">Date:</label>
                     <input id="datepicker" name="entryDate" className="form-control" required /><br/>
                     <label htmlFor="dayEntry">Entry for the Day:</label>
                     <textarea name="dayEntry" className="form-control" /><br/>
-                    <div className="game-entry">
+                </form>
+                    <form action="#" method="">
                         {/*<label htmlFor="gameImgSrc">Img source:</label><input type="text" name="gameImgSrc" className="form-control" required/><br />*/}
                         <label htmlFor="gameName">Game Name:</label>
-                        <input type="text" name="gameName" className="form-control" required/><br />
+                        <input type="text" name="gameName" className="form-control" required/>
+                        <input type="submit" name="" className="submit-entry btn btn-success" defaultValue="Search"/><br /><br />
                         <label htmlFor="gameEntry">Game Entry:</label>
                         <input type="text" name="gameEntry" className="form-control" required/><br />
-                    </div>
+                    </form>
+                    <form action="/entries" method="POST">
                     <input type="submit" name="" className="submit-entry btn btn-success" defaultValue="Submit Entry"/>
                 </form>
                 <button className="add-game btn btn-primary" type="button">Add Another Game</button>

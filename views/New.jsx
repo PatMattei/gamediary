@@ -6,6 +6,11 @@ class Index extends React.Component {
         return(
             <Layout>
                 <h1>New Entry</h1>
+                <form action="/api" method="POST">
+                    <button className="btn-primary" type="button" action="/api" method="POST">TEST API</button>
+                </form>
+
+
                 <form action="/entries" method="POST" className="entry-info-form">
                     <label for="datepicker">Date: </label>
                     <input id="datepicker" name="entryDate" className="form-control" required /><br/>

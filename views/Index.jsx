@@ -4,11 +4,14 @@ const Layout = require('./components/Layout');
 class Index extends React.Component {
     render() {
         const entries = this.props.entries;
+        //sort entries by date
+        const sortedEntries = entries.sort((a, b) => new Date(b.entryDate) - new Date(a.entryDate))
+
         
         return (
             <Layout>
                 <ul className="index-list w-100">
-                    {entries.map((entry) => {
+                    {sortedEntries.map((entry) => {
                         return(
                             <li className="index-diary-entry row" key={entry._id}>
                                 <div className="entry-date col-12">

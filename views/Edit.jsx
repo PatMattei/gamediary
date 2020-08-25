@@ -42,7 +42,7 @@ class Edit extends React.Component {
                 <button className="add-game btn btn-primary" type="button">Add Another Game</button>
                 <hr />
                 <form action={`/entries/${_id}?_method=DELETE`} method="POST">
-                    <input type="submit" class="btn btn-danger" defaultValue="Delete This Day's Entry"/>
+                    <input type="submit" className="btn btn-danger" defaultValue="Delete This Day's Entry"/>
                 </form>
             </Layout>
         )

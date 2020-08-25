@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const entrySchema = new Schema({
-    entryDate: { type: Date, required: true },
+    entryDate: { type: String, required: true },
     dayEntry: String,
     games: [
         {

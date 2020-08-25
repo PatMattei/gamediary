@@ -12,7 +12,7 @@ class Index extends React.Component {
                     <label for="dayEntry">Entry for the Day: </label>
                     <textarea name="dayEntry" className="form-control" /><br/>
                     <div className="game-entry">
-                        <label for="gameImgSrc">Img source: </label>
+                        <label for="gameImgSrc">Img source:</label>
                         <input type="text" name="gameImgSrc" className="form-control" required/><br />
                         <label for="gameName">Game Name:</label>
                         <input type="text" name="gameName" className="form-control" required/><br />

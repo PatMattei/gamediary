@@ -19,7 +19,7 @@ class Index extends React.Component {
                                         
                                         {entry.games.map((game) => {
                                             return(
-                                                <div className="game-img-thumbnail-container col-4 col-lg-3">
+                                                <div key={game.gameName} className="game-img-thumbnail-container col-4 col-lg-3">
                                                     <img src={game.gameImgSrc} className="game-img-thumbnail" />
                                                 </div>
                                             )

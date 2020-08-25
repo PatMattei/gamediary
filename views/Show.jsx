@@ -10,7 +10,7 @@ class Show extends React.Component {
             <Layout>
                 <div className="show-entry-container w-100">
                     <div className="show-entry-top row">
-                        <h2 className='entry-date col-12' datetime={dayEntry}>{entryDate.toString()}</h2>
+                        <h2 className='entry-date col-12' dateTime={dayEntry}>{entryDate.toString()}</h2>
                         <div className="day-entry col-8">{dayEntry}</div>
                         <div className="col-4">
                             <a href={`${_id}/edit`}><button type="button" className="edit-entry-btn btn btn-primary">Edit Today's Entry</button></a>

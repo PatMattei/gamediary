@@ -38,22 +38,3 @@ app.listen(PORT, () => {
 mongoose.connection.once('open', () => {
     console.log("connected to mongo");
 })
-
-//////////API TESTING//////////
-//https://stackoverflow.com/questions/57362401/react-what-is-the-correct-way-to-make-an-api-call-with-user-input
-
-//https://www.youtube.com/watch?v=CAPaHp7l1-I
-// app.post('/', function(req, res) {
-//     accessGiantBomb(req.body.gameName);
-//     res.send('success')
-// });
-
-// const accessGiantBomb = (gameName) => {
-//     var request = require('request');
-
-//     var options = {
-//         method: "POST",
-//         url: `https://www.giantbomb.com/api/games/?format=json&api_key=${GB_API_KEY}`
-//     }
-// }
-//////////API TESTING//////////

@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Entry = require('../models/entries.js');
-const request = require('request');
-
-const GB_API_KEY = process.env.GB_API_KEY;
 
 // add routes
 // Index
@@ -19,18 +16,6 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
     res.render('New');
 });
-
-
-//////////API TESTING//////////
-router.post('/api', function(req, res, next) {
-    res.send('Test');
-    request.get(`http://www.giantbomb.com/api/search/?api_key=${GB_API_KEY}&format=json&query="mario bros."&resources=game`).on('response', function(response) {
-        console.log(response)
-    })
-    .pipe(request.put((res)));
-});
-//////////API TESTING//////////
-
 
 //Delete
 router.delete('/:id', (req, res) => {

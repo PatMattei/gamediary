@@ -4,7 +4,6 @@ const Layout = require('./components/Layout');
 class Show extends React.Component {
     render() {
         const {_id, dayEntry, games, entryDate} = this.props.entry;
-        //TODO: Get dates working
         
         return (
             <Layout>

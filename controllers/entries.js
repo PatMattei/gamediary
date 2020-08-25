@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Entry = require('../models/entries.js');
-//const Entry = require('../models/seed.js');
 
-// add routes
 // Index
 router.get('/', (req, res) => {
     Entry.find({}, (error, allEntries) => {

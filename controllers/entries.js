@@ -16,10 +16,9 @@ router.get('/', (req, res) => {
 });
 
 //New
-router.get('/new', (req, res) => {
+router.get('/new/', (req, res) => {
     res.render('New');
 });
-  
 
 //Delete
 router.delete('/:id', (req, res) => {
@@ -114,6 +113,7 @@ router.get('/api/:query', function(req, res) {
         query: req.params.query,
         resources: "game",
         api_key: GB_API_KEY,
+        limit: 100,
         format: "json"
       }
     };

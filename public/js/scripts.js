@@ -29,4 +29,28 @@ $(() => {
     $(".remove-game").on('click', (event) => {
         removeGame(event);
     });
+
+
+
+
+    $('.search-game').on('click', () => {
+        $('iframe').remove();
+        let name = $('input[name="gameName"]').val();
+        $('input[name="gameName"]').before(`<iframe src="/entries/api/${name}" style="width: 50%; height: 200px" />)`).on('click', '.returned-game', () => {
+            let name = $(event.target).attr("gamename");
+            console.log(name)
+            //$('input[name="gameName"]').val(name)
+
+        });
+    });
+
+
+    $('.returned-game').on('click', () => {
+        let name = $(event.target).attr("gamename");
+        console.log(name);
+    });
+
+    window.addEventListener('message', function(event) {
+        $('input[name="gameName"]').val(event.data.name)
+    });
 });

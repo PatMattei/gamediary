@@ -38,19 +38,14 @@ $(() => {
         let name = $('input[name="gameName"]').val();
         $('input[name="gameName"]').before(`<iframe src="/entries/api/${name}" style="width: 50%; height: 200px" />)`).on('click', '.returned-game', () => {
             let name = $(event.target).attr("gamename");
-            console.log(name)
-            //$('input[name="gameName"]').val(name)
-
         });
     });
 
-
-    $('.returned-game').on('click', () => {
-        let name = $(event.target).attr("gamename");
-        console.log(name);
-    });
-
     window.addEventListener('message', function(event) {
-        $('input[name="gameName"]').val(event.data.name)
+        $('input[name="gameName"]').val(event.data.name);
+        $('input[name="gameImgSrc"]').val(event.data.imgSrc);
+        $('.form-img').attr('src', event.data.imgSrc);
+        $('.form-img').attr('alt', event.data.name);
+        $('.form-img').addClass('active');
     });
 });

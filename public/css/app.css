@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+img {max-width: 100%;}
+
 
 nav {
     margin-bottom: 5%;
@@ -86,6 +88,12 @@ nav {
     display: block;
 }
 
+.form-img {
+    display: none;
+}
+.form-img.active {
+    display: block;
+}
 .show-entry-top {
     margin-bottom: 20px;
 }

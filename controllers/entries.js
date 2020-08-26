@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const axios = require("axios");
 const Entry = require('../models/entries.js');
+
+const GB_API_KEY = process.env.GB_API_KEY;
 
 // Index
 router.get('/', (req, res) => {
@@ -55,6 +58,26 @@ router.put('/:id', (req, res) => {
         res.redirect(`/entries/${req.params.id}`);
     });
 });
+
+router.get('/api/:query', function(req, res) {
+    var qs = {
+      params: {
+        query: req.params.query,
+        resources: "game",
+        api_key: GB_API_KEY,
+        limit: 100,
+        format: "json"
+      }
+    };
+
+    axios.get('https://www.giantbomb.com/api/search/', qs)
+      .then(function (response) {
+        // handle success
+        res.render('components/ApiFoundGamesList', {
+            apiCall: response.data
+        })
+      })
+  });
 
 //Create
 router.post('/', (req, res) => {

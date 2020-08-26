@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+img {max-width: 100%;}
 
 nav {
     margin-bottom: 5%;
@@ -36,7 +37,12 @@ nav {
     font-size: 12px;
 }
 
-.show-entry-container .entry-date {}
+.form-img {
+    display: none;
+}
+.form-img.active {
+    display: block;
+}
 
 .day-diary {
     border: gray solid 1px;

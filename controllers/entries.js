@@ -71,12 +71,16 @@ router.get('/api/:query', function(req, res) {
     };
 
     axios.get('https://www.giantbomb.com/api/search/', qs)
-      .then(function (response) {
-        // handle success
-        res.render('components/ApiFoundGamesList', {
-            apiCall: response.data
+        .then(function (response) {
+            // handle success
+            res.render('components/ApiFoundGamesList', {
+                apiCall: response.data
+            })
+            .catch(function (err) {
+                console.log("Promise Rejected");
+                console.log(err);
+           });
         })
-      })
   });
 
 //Create

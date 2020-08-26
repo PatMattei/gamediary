@@ -42,6 +42,7 @@ nav {
 }
 .form-img.active {
     display: block;
+    max-width: 300px;
 }
 
 .day-diary {

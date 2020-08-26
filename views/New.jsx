@@ -13,17 +13,17 @@ class New extends React.Component {
                     <label htmlFor="dayEntry">Entry for the Day:</label>
                     <textarea name="dayEntry" className="form-control" /><br/>
                     <img className="form-img"></img>
-                    <input type="hidden" name="gameImgSrc" /><br />
+                    <input type="hidden" name="gameImgSrc" class="current" /><br />
 
                     <label htmlFor="gameName">Game Name:</label>
-                    <input type="text" name="gameName" className="form-control" required/>
+                    <input type="text" name="gameName" className="form-control current" required/>
 
                     <button type="button" name="" className="search-game btn btn-success">Search</button><br /><br />
 
 
                     <label htmlFor="gameEntry">Game Entry:</label>
                     <input type="text" name="gameEntry" className="form-control" required/><br />
-                    
+
                     <input type="submit" name="" className="submit-entry btn btn-success" defaultValue="Submit Entry"/>
                 </form>
                 <button className="add-game btn btn-primary" type="button">Add Another Game</button>

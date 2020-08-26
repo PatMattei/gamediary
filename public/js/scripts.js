@@ -27,15 +27,15 @@ $(() => {
 
     $('.search-game').on('click', () => {
         $('iframe').remove();
-        let name = $('input[name="gameName"]').val();
-        $('input[name="gameName"]').before(`<iframe src="/entries/api/${name}" style="width: 50%; height: 200px" />)`).on('click', '.returned-game', () => {
+        let name = $('input[name="gameName"].current').val();
+        $('input[name="gameName"].current').before(`<iframe src="/entries/api/${name}" style="width: 50%; height: 200px" />)`).on('click', '.returned-game', () => {
             let name = $(event.target).attr("gamename");
         });
     });
 
     window.addEventListener('message', function(event) {
-        $('input[name="gameName"]').val(event.data.name);
-        $('input[name="gameImgSrc"]').val(event.data.imgSrc);
+        $('input[name="gameName"].current').val(event.data.name);
+        $('input[name="gameImgSrc"].current').val(event.data.imgSrc);
         $('.form-img').attr('src', event.data.imgSrc);
         $('.form-img').attr('alt', event.data.name);
         $('.form-img').addClass('active');

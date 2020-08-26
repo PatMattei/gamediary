@@ -76,11 +76,12 @@ router.get('/api/:query', function(req, res) {
             res.render('components/ApiFoundGamesList', {
                 apiCall: response.data
             })
-            .catch(function (err) {
-                console.log("Promise Rejected");
-                console.log(err);
-           });
         })
+        .catch(function (err) {
+            console.log("Promise Rejected");
+            console.log(err)
+            alert(err);
+       });
   });
 
 //Create

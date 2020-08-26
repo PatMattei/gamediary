@@ -3,7 +3,7 @@
 GameDiary can be found at https://gamediary.herokuapp.com/. It's a site where users can log their daily video-game playing habits, including specific games they played and text entries about what they did. A user can log a general entry for the day in addition to specific entries on each game that they played.
 
 Tech Used:
-GameDairy is built on React, Express, and jQuery. I used the 'request' dependency to experiment with making API calls.
+GameDairy is built on React, Express, and jQuery. I used Axios dependency to work with making API calls.
 Styling is mostly done with Bootstrap. I challenged myself to stay as close to the framework as possible, without having to force my own spacing and sizing. I also used Bootswatch's Flatly theme for color and general styling.
 
 Challenges:
